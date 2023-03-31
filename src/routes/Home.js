@@ -1,54 +1,68 @@
-import React from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import '../theme.css';
+import React from 'react';   
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
-export default function Home() {
+export default function Home(){
   return (
     <div>
         <Header />
         {/* <!-- Page Content--> */}
-        <div className="container px-4 px-lg-5">
+        <div className="container-fluid">
             {/* <!-- Heading Row--> */}
-            <div className="row gx-4 gx-lg-5 align-items-center my-5">
-                <div className="col-lg-7"><img className="img-fluid rounded mb-4 mb-lg-0" src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="..." /></div>
-                <div className="col-lg-5">
-                    <h2 className="font-weight-light text-center">Quality Since 1987</h2>
-                    <p>We are approved to 1SO-9001 and as an inspection and repair company. Our goal is to provide exceptional customer service and quick turnaround times so that our customers can get back to using their devices as soon as possible.</p>
-                </div>
-            </div>
-            {/* <!-- Call to Action--> */}
-            <div className="card text-white bg-secondary my-5 py-4 text-center">
-                <div className="card-body"><p className="text-white m-0">When paired with our tools, we mean repair!</p></div>
+            <div className="row gx-4 gx-lg-5 align-items-center">
+                <div className="col-lg-12 banner"></div>
             </div>
             {/* <!-- Content Row--> */}
             <div className="row gx-4 gx-lg-5">
                 <div className="col-md-4 mb-5">
-                    <div className="card h-100">
-                        <div className="card-body">
-                            <h2 className="card-title">Electrical</h2>
-                            <p className="card-text" text-align="justify">Use our electrical technicians for domestic and commercial electrical work</p>
+                    <div className="card h-100 py-4">
+                        <img class="img mx-auto" src="https://img.icons8.com/material-rounded/90/3e54ac/money-bag.png" alt="Multiple trading pairs placeholder" />
+                        <div className="text-center">
+                            <p className="card-text">Multiple trading pairs</p>
                         </div>
-                        <div className="card-footer"><a className="btn btn-primary btn-sm" href="#!">More Info</a></div>
                     </div>
                 </div>
                 <div className="col-md-4 mb-5">
-                    <div className="card h-100">
-                        <div className="card-body">
-                            <h2 className="card-title">Plumbing</h2>
-                            <p className="card-text">Use our Plumbers for domestic and commercial water work</p>
+                    <div className="card h-100 py-4">
+                        <img class="img mx-auto" src="https://img.icons8.com/ios-glyphs/90/3e54ac/key--v1.png" alt="Secure placeholder" />
+                        <div className="text-center">
+                            <p className="card-text">Secure</p>
                         </div>
-                        <div className="card-footer"><a className="btn btn-primary btn-sm" href="#!">More Info</a></div>
                     </div>
                 </div>
                 <div className="col-md-4 mb-5">
-                    <div className="card h-100">
-                        <div className="card-body">
-                            <h2 className="card-title">Inspection</h2>
-                            <p className="card-text">We are 1SO-9001 approved! We care about Occupational Safety and Health</p>
+                    <div className="card h-100 py-4">
+                        <img class="img mx-auto" src="https://img.icons8.com/ios-glyphs/90/3e54ac/handshake--v1.png" alt="Investment ready placeholder" />
+                        <div className="text-center">
+                            <p className="card-text">Investment ready</p>
                         </div>
-                        <div className="card-footer"><a className="btn btn-primary btn-sm" href="#!">More Info</a></div>
                     </div>
                 </div>
+                <div className="col-md-4 mb-5">
+                    <div className="card h-100 py-4">
+                        <img class="img mx-auto" src="https://img.icons8.com/ios-glyphs/90/3e54ac/hand-cursor.png" alt="MPESA placeholder" />
+                        <div className="text-center">
+                            <p className="card-text">MPESA</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-md-4 mb-5">
+                    <div className="card h-100 py-4">
+                        <img class="img mx-auto" src="https://img.icons8.com/ios-filled/90/3e54ac/upload-to-cloud--v1.png" alt="Data backups placeholder" />
+                        <div className="text-center">
+                            <p className="card-text">Data backups</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-md-4 mb-5">
+                    <div className="card h-100 py-4">
+                        <img className="img mx-auto" src="https://img.icons8.com/ios-filled/90/3e54ac/fingerprint.png" alt="Privacy placeholder" />
+                        <div className="text-center">
+                            <p className="card-text">Privacy</p>
+                        </div>
+                    </div>
+                </div>                
             </div>
         </div>
         <Footer />
