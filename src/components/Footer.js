@@ -2,9 +2,9 @@ import React from 'react'
 
 function Footer() {
   return (
-    <footer class="py-5 bg-dark">
+    <footer class="py-4 header-footer-theme ">
         <div class="container px-4 px-lg-5">
-            <p class="m-0 text-center text-white">Copyright &copy; Senpai Ventures 1987 - 2023</p>
+            <p class="m-0 text-center text-white theme-font">Copyright &copy; Tradr 2023</p>
         </div>
     </footer>
   )

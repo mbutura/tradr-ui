@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
 .banner {
     height: 654px;
     width: 100%;
     background: linear-gradient(101.62deg, #BFACE2 0%, rgba(255, 255, 255, 0) 30.73%);
-  }
+}
+
+.login-background{
+    background: linear-gradient(136.61deg, #BFACE2 0%, #F5F8FF 56.25%);
+}
 
 .img{
     width: 90px;
@@ -11,4 +17,28 @@
 
 .logo-img{
     width: 20%;
+}
+
+.header-footer-theme{
+    background-color: #655DBB;
+}
+
+.homepage-background-color{
+    background-color: #F5F8FF;
+}
+
+.theme-font{
+    font-family: 'Lato', sans-serif;
+}
+
+.color-3E54AC{
+    color:#3E54AC;
+}
+
+.color-655DBB{
+    color:#655DBB;
+}
+
+.color-F5F8FF{
+    color:#F5F8FF;
 }
