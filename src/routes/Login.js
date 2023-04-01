@@ -1,5 +1,7 @@
+import '../theme.css';
+import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { useNavigate, Fragment } from "react-router-dom";
+import { useNavigate/*, Fragment*/ } from "react-router-dom";
 
 const Login = () => {
     let navigate = useNavigate(); 
@@ -9,9 +11,9 @@ const Login = () => {
     }
 
     return (
-    <>
+    <div class="login-background">
         <Header />
-        <div class="jumbotron align-items-center">
+        <div class="jumbotron vertical-center extend-height">
             <div class="container mt-5">
                 <div class="row justify-content-center ">
                     <div class="col-md-6 col-lg-4">
@@ -27,7 +29,7 @@ const Login = () => {
                                         <input type="password" class="form-control" id="password" name="password" placeholder="Password*" required />
                                     </div>
                                     <div class="d-grid gap-2">
-                                        <button class="btn btn-primary " onClick={routeChange}>Log in</button>
+                                        <button class="btn color btn-theme-color" onClick={routeChange}>Log in</button>
                                     </div>
                                 </form>
                             </div>
@@ -36,7 +38,8 @@ const Login = () => {
                 </div>
             </div>
         </div>
-    </>
+        <Footer />
+    </div>
     );
 };
 

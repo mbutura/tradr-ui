@@ -42,3 +42,12 @@
 .color-F5F8FF{
     color:#F5F8FF;
 }
+
+.btn-theme-color{
+    background-color: #3E54AC;
+    color: #FFFFFF
+}
+
+.extend-height{
+    min-height: 100vh
+}
