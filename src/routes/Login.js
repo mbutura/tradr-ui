@@ -40,27 +40,27 @@ const Login = () => {
     }
 
     return (
-    <div class="login-background">
+    <div className="login-background">
         <Header />
-        <div class="jumbotron vertical-center extend-height">
-            <div class="container mt-5">
-                <div class="row justify-content-center ">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card shadow align-middle">
-                            <div class="card-body">
+        <div className="jumbotron vertical-center extend-height">
+            <div className="container mt-5">
+                <div className="row justify-content-center ">
+                    <div className="col-md-6 col-lg-4">
+                        <div className="card shadow align-middle">
+                            <div className="card-body">
                                 <form onSubmit={handleSubmit}>
-                                    <div class="mb-3">
-                                        <label htmlfor="username" class="form-label color-655DBB"><strong>Username</strong></label>
-                                        <input type="text" class="form-control" id="username" name="username" value={username} placeholder="Username*" onChange={(e) => setUsername(e.target.value)} required />
+                                    <div className="mb-3">
+                                        <label htmlfor="username" className="form-label .theme-font color-655DBB"><strong>Username</strong></label>
+                                        <input type="text" className="form-control" id="username" name="username" value={username} placeholder="Username*" onChange={(e) => setUsername(e.target.value)} required />
                                     </div>
-                                    <div class="mb-3">
-                                        <label htmlfor="password" class="form-label color-655DBB"><strong>Password</strong></label>
-                                        <input type="password" class="form-control" id="password" name="password" value={password} placeholder="Password*" onChange={(e) => setPassword(e.target.value)} required />
+                                    <div className="mb-3">
+                                        <label htmlfor="password" className="form-label .theme-font color-655DBB"><strong>Password</strong></label>
+                                        <input type="password" className="form-control" id="password" name="password" value={password} placeholder="Password*" onChange={(e) => setPassword(e.target.value)} required />
                                     </div>
-                                    <div class="d-grid gap-2">
-                                        <button class="btn color btn-theme-color" type="submit">Log in</button>
+                                    <div className="d-grid gap-2">
+                                        <button classNameName="btn color btn-theme-color" type="submit">Log in</button>
                                     </div>
-                                    {(loginError.length > 0)&&<p  className="text-danger">{loginError}</p> }
+                                    {(loginError.length > 0)&&<p  classNameName="text-danger theme-font">{loginError}</p> }
                                 </form>
                             </div>
                         </div>
