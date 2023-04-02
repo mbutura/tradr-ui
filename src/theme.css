@@ -43,8 +43,13 @@
     color:#F5F8FF;
 }
 
-.btn-theme-color{
+form button{
     background-color: #3E54AC;
+    color: #FFFFFF
+}
+
+form button:hover{
+    background-color: #655DBB;
     color: #FFFFFF
 }
 

@@ -8,10 +8,12 @@ const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [loginError, setLoginError] = useState("");
+    const [submitRespondPending, setSubmitRespondPending] = useState(false);
 
     const navigate = useNavigate();
 
     const handleSubmit = async(evt) => {
+        setSubmitRespondPending(true)
         evt.preventDefault();
 
         const loginRequestHeader = { "Content-Type": "application/json"};
@@ -29,7 +31,7 @@ const Login = () => {
             console.log("errors")
         }
 
-        // Uses the 'optional chaining' operator
+        setSubmitRespondPending(false)
         if (response?.ok) {
             navigate("/dashboard");
         } else if (response['status'] === 401){
@@ -50,17 +52,17 @@ const Login = () => {
                             <div className="card-body">
                                 <form onSubmit={handleSubmit}>
                                     <div className="mb-3">
-                                        <label htmlfor="username" className="form-label .theme-font color-655DBB"><strong>Username</strong></label>
+                                        <label htmlfor="username" className="form-label color-655DBB"><strong>Username</strong></label>
                                         <input type="text" className="form-control" id="username" name="username" value={username} placeholder="Username*" onChange={(e) => setUsername(e.target.value)} required />
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlfor="password" className="form-label .theme-font color-655DBB"><strong>Password</strong></label>
+                                        <label htmlfor="password" className="form-label color-655DBB"><strong>Password</strong></label>
                                         <input type="password" className="form-control" id="password" name="password" value={password} placeholder="Password*" onChange={(e) => setPassword(e.target.value)} required />
                                     </div>
-                                    <div className="d-grid gap-2">
-                                        <button classNameName="btn color btn-theme-color" type="submit">Log in</button>
+                                    <div className="d-grid gap-2 mb-2">
+                                        <button className="btn-theme-color py-2 rounded-lg" type="submit">{(submitRespondPending===true)?<div class="spinner-border spinner-border-sm" role="status" />:"Log in"}</button>
                                     </div>
-                                    {(loginError.length > 0)&&<p  classNameName="text-danger theme-font">{loginError}</p> }
+                                    {(loginError.length > 0)&&<p  className="theme-font text-danger">{loginError}</p> }
                                 </form>
                             </div>
                         </div>
