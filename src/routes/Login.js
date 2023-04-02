@@ -12,36 +12,33 @@ const Login = () => {
     // eslint-disable-next-line
     const navigate = useNavigate();
 
-    function handleSubmit(e) {
+    const handleSubmit = async(e) => {
         /*Prevent default form clearance behaviour after posting*/
         e.preventDefault();
 
         const loginRequestHeader = { "Content-Type": "application/json"};
         const loginRequestBody = { username: username, password: password};
+        
+        let response = undefined
+        
+        try {
+            response = await fetch("/login", {
+                method: "POST",
+                headers: loginRequestHeader,
+                body: JSON.stringify(loginRequestBody),
+              });
+        } catch (error){
+            console.log("halloooo")
+        }
 
-        fetch("/login", {
-          method: "POST",
-          headers: loginRequestHeader,
-          body: JSON.stringify(loginRequestBody),
-        })
-        .then((response) => {
-            if (response.status === 200) {
-                return response.json();
-            } else {
-                return response.json().then((data) => {
-                    let exception = new Error(response.status);
-                    exception.server_message = data["error"];
-                    exception.code   = response.status;
-                    throw exception;
-            })}
-        })
-        .then((user) => {
+        // Uses the 'optional chaining' operator
+        if (response?.ok) {
             navigate("/dashboard");
-        })
-        .catch((exception) => {
-            console.log(exception.server_message)
-            setLoginError(`${exception.server_message}`)
-        });
+        } else if (response['status'] === 401){
+            setLoginError('Invalid username or password')
+        } else {
+            setLoginError('Login error')
+        }
     }
 
     return (
