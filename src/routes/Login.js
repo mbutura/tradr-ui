@@ -1,13 +1,47 @@
 import '../theme.css';
+import React, { useState } from 'react';
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { useNavigate/*, Fragment*/ } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-    let navigate = useNavigate(); 
-    const routeChange = () =>{ 
-      let path = `/manage`; 
-      navigate(path);
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [loginError, setLoginError] = useState("");
+
+    // eslint-disable-next-line
+    const navigate = useNavigate();
+
+    function handleSubmit(e) {
+        /*Prevent default form clearance behaviour after posting*/
+        e.preventDefault();
+
+        const loginRequestHeader = { "Content-Type": "application/json"};
+        const loginRequestBody = { username: username, password: password};
+
+        fetch("/login", {
+          method: "POST",
+          headers: loginRequestHeader,
+          body: JSON.stringify(loginRequestBody),
+        })
+        .then((response) => {
+            if (response.status === 200) {
+                return response.json();
+            } else {
+                return response.json().then((data) => {
+                    let exception = new Error(response.status);
+                    exception.server_message = data["error"];
+                    exception.code   = response.status;
+                    throw exception;
+            })}
+        })
+        .then((user) => {
+            navigate("/dashboard");
+        })
+        .catch((exception) => {
+            console.log(exception.server_message)
+            setLoginError(`${exception.server_message}`)
+        });
     }
 
     return (
@@ -19,18 +53,19 @@ const Login = () => {
                     <div class="col-md-6 col-lg-4">
                         <div class="card shadow align-middle">
                             <div class="card-body">
-                                <form>
+                                <form onSubmit={handleSubmit}>
                                     <div class="mb-3">
-                                        <label for="username" class="form-label color-655DBB"><strong>Username</strong></label>
-                                        <input type="text" class="form-control" id="username" name="username" placeholder="Username*" required />
+                                        <label htmlfor="username" class="form-label color-655DBB"><strong>Username</strong></label>
+                                        <input type="text" class="form-control" id="username" name="username" value={username} placeholder="Username*" onChange={(e) => setUsername(e.target.value)} required />
                                     </div>
                                     <div class="mb-3">
-                                        <label for="password" class="form-label color-655DBB"><strong>Password</strong></label>
-                                        <input type="password" class="form-control" id="password" name="password" placeholder="Password*" required />
+                                        <label htmlfor="password" class="form-label color-655DBB"><strong>Password</strong></label>
+                                        <input type="password" class="form-control" id="password" name="password" value={password} placeholder="Password*" onChange={(e) => setPassword(e.target.value)} required />
                                     </div>
                                     <div class="d-grid gap-2">
-                                        <button class="btn color btn-theme-color" onClick={routeChange}>Log in</button>
+                                        <button class="btn color btn-theme-color" type="submit">Log in</button>
                                     </div>
+                                    {(loginError.length > 0)&&<p  className="text-danger">{loginError}</p> }
                                 </form>
                             </div>
                         </div>
