@@ -2,9 +2,12 @@ import '../theme.css';
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import React, { useEffect } from 'react';
-import { /*useNavigate,*/ Fragment } from "react-router-dom";
+import { useNavigate, Fragment } from "react-router-dom";
 
 const Dashboard = () => {
+    const navigate = useNavigate();
+    
+    // eslint-disable-next-line
     const RenderBalanceData = async() => {
         let balances = undefined
         let response = undefined
@@ -20,19 +23,24 @@ const Dashboard = () => {
             balances = await response.json();
             console.log(balances)
         } else if (response['status'] === 401){
-            console.log('Unauthorized')
-        } else {
-            console.log('Login error')
+            navigate("/login");
         }
+        //Ideally we should handle other cases here
     }
 
+    // eslint-disable-next-line
     useEffect(() => {
         RenderBalanceData();
-    }, []);
+    }, [RenderBalanceData]);
 
     return (
     <>
         <Header />
+        <div className="login-background extend-height vertical-center ">
+            <div class="spinner-border" role="status">
+                <span class="sr-only"></span>
+            </div>
+        </div>
         <Footer />
     </>
     );
