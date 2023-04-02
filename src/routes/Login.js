@@ -9,12 +9,10 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [loginError, setLoginError] = useState("");
 
-    // eslint-disable-next-line
     const navigate = useNavigate();
 
-    const handleSubmit = async(e) => {
-        /*Prevent default form clearance behaviour after posting*/
-        e.preventDefault();
+    const handleSubmit = async(evt) => {
+        evt.preventDefault();
 
         const loginRequestHeader = { "Content-Type": "application/json"};
         const loginRequestBody = { username: username, password: password};
@@ -28,7 +26,7 @@ const Login = () => {
                 body: JSON.stringify(loginRequestBody),
               });
         } catch (error){
-            console.log("halloooo")
+            console.log("errors")
         }
 
         // Uses the 'optional chaining' operator
