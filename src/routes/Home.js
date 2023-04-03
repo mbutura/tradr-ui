@@ -11,8 +11,10 @@ export default function Home({value}){
         {/* <!-- Page Content--> */}
         <div className="container-fluid">
             {/* <!-- Heading Row--> */}
-            <div className="row gx-4 gx-lg-5 align-items-center">
-                <div className="col-lg-12 banner"></div>
+            <div className="row banner align-items-center">
+                <div className="col-lg-12  d-flex align-items-center justify-content-center">
+                    <div class="h2 color-655DBB ">Get notified when the markets move!</div>
+                </div>
             </div>
             {/* <!-- Content Row--> */}
             <div className="row gx-4 gx-lg-5 homepage-background-color">

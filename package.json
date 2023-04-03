@@ -1,6 +1,7 @@
 {
   "name": "tradr-ui",
   "version": "0.1.0",
+  "homepage": "http://mbutura.github.io/tradr-ui",
   "private": true,
   "proxy": "http://localhost:3000",
   "dependencies": {
@@ -17,6 +18,8 @@
   },
   "scripts": {
     "start": "PORT=5173 react-scripts start",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
