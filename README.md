@@ -2,7 +2,7 @@
 
 ## Frontend demo link (without backend server)
 
-- [https://mbutura.github.io/](https://mbutura.github.io/tradr-ui/)
+- [Tradr frontend](https://mbutura.github.io/tradr-ui/)
 
 ## Design Link
 
