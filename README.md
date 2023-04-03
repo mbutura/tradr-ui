@@ -46,4 +46,8 @@ Tradr is a financial markets startup focused in day-trading within the crypto ma
 
 `npm run start`
 
+## Licence
+
+MIT licence
+
 
