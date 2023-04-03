@@ -1,14 +1,17 @@
 import '../theme.css';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
+import { LoginStateContext } from "../context/loginstate";
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [loginError, setLoginError] = useState("");
     const [submitRespondPending, setSubmitRespondPending] = useState(false);
+
+    const setLoggedIn = useContext(LoginStateContext)[1];
 
     const navigate = useNavigate();
 
@@ -33,6 +36,7 @@ const Login = () => {
 
         setSubmitRespondPending(false)
         if (response?.ok) {
+            setLoggedIn(true)
             navigate("/dashboard");
         } else if (response['status'] === 401){
             setLoginError('Invalid username or password')
