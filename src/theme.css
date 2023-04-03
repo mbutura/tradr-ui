@@ -3,7 +3,8 @@
 .banner {
     height: 50vh;
     width: 100%;
-    background: linear-gradient(101.62deg, #BFACE2 0%, rgba(255, 255, 255, 0) 30.73%);
+    background: url("/src/assets/banner-arrow.png") 0% 50%/20% 50% no-repeat,
+    linear-gradient(101.62deg, #BFACE2 0%, rgba(255, 255, 255, 0) 30.73%);
 }
 
 .login-background{
