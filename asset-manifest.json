@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/tradr-ui/static/css/main.94270da4.css",
-    "main.js": "/tradr-ui/static/js/main.7cdcd9d4.js",
+    "main.js": "/tradr-ui/static/js/main.e1a2af9b.js",
     "static/media/banner-image-person.jpg": "/tradr-ui/static/media/banner-image-person.e07a14cd142132dc7992.jpg",
     "static/media/banner-arrow.png": "/tradr-ui/static/media/banner-arrow.b3c3fd3fb05ea5974e83.png",
     "index.html": "/tradr-ui/index.html",
     "main.94270da4.css.map": "/tradr-ui/static/css/main.94270da4.css.map",
-    "main.7cdcd9d4.js.map": "/tradr-ui/static/js/main.7cdcd9d4.js.map"
+    "main.e1a2af9b.js.map": "/tradr-ui/static/js/main.e1a2af9b.js.map"
   },
   "entrypoints": [
     "static/css/main.94270da4.css",
-    "static/js/main.7cdcd9d4.js"
+    "static/js/main.e1a2af9b.js"
   ]
 }
