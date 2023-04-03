@@ -1,5 +1,9 @@
 # Tradr trading - A phase 4 project
 
+## Frontend demo link (without backend server)
+
+- [https://mbutura.github.io/](https://mbutura.github.io/tradr-ui/)
+
 ## Design Link
 
 [Figma design](https://www.figma.com/file/0HSiGl3dc1WXkCLbLAWgU4/TradR-startup?node-id=10-52)
@@ -27,3 +31,15 @@ Tradr is a financial markets startup focused in day-trading within the crypto ma
 - HTML, CSS and React with bootstrap (frontend)
 - Ruby (backend)
 - Figma
+
+## Getting started with the frontend
+
+1. Install dependencies
+
+`npm install`
+
+2. Start frontend HTTP dev server
+
+`npm run start`
+
+
