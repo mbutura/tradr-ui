@@ -1,17 +1,16 @@
 import '../theme.css';
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
-import { LoginStateContext } from "../context/loginstate";
 
-const Login = () => {
+const Login = ({value}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [loginError, setLoginError] = useState("");
     const [submitRespondPending, setSubmitRespondPending] = useState(false);
 
-    const setLoggedIn = useContext(LoginStateContext)[1];
+    const setLoggedIn = value[1];
 
     const navigate = useNavigate();
 
@@ -47,7 +46,7 @@ const Login = () => {
 
     return (
     <div className="login-background">
-        <Header />
+        <Header value={value}/>
         <div className="jumbotron vertical-center extend-height">
             <div className="container mt-5">
                 <div className="row justify-content-center ">

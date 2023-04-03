@@ -3,10 +3,11 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-export default function Home(){
+export default function Home({value}){
+    console.log(`Home value: ${value}`)
   return (
     <div>
-        <Header />
+        <Header value={value}/>
         {/* <!-- Page Content--> */}
         <div className="container-fluid">
             {/* <!-- Heading Row--> */}

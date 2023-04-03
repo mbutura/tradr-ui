@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-const NotFound = () => {
+const NotFound = ({value}) => {
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const NotFound = () => {
 
   return (
     <>
-      <Header />
+      <Header value={value}/>
       <div className="container-fluid py-5 extend-height login-background">
         <div className="row justify-content-center">
           <div className="col-lg-6">

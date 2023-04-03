@@ -4,7 +4,8 @@ import Header from "../components/Header";
 import React, { useEffect } from 'react';
 import { useNavigate, Fragment } from "react-router-dom";
 
-const Dashboard = () => {
+const Dashboard = ({value}) => {
+    console.log(`Dashboard value: ${value}`)
     const navigate = useNavigate();
     
     // eslint-disable-next-line
@@ -35,7 +36,7 @@ const Dashboard = () => {
 
     return (
     <>
-        <Header />
+        <Header value={value}/>
         <div className="login-background extend-height vertical-center ">
             <div class="spinner-border" role="status">
                 <span class="sr-only"></span>
