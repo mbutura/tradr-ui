@@ -1,11 +1,12 @@
 import '../theme.css';
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, Fragment } from "react-router-dom";
 
 const Dashboard = ({value}) => {
-    console.log(`Dashboard value: ${value}`)
+    const [data, setData] = useState([]);
+
     const navigate = useNavigate();
     
     // eslint-disable-next-line
@@ -22,7 +23,7 @@ const Dashboard = ({value}) => {
         // Uses the 'optional chaining' operator
         if (response?.ok) {
             balances = await response.json();
-            console.log(balances)
+            setData(balances)
         } else if (response['status'] === 401){
             navigate("/login");
         }
@@ -30,17 +31,30 @@ const Dashboard = ({value}) => {
     }
 
     // eslint-disable-next-line
-    useEffect(() => {
-        RenderBalanceData();
-    }, [RenderBalanceData]);
+    useEffect(() => { RenderBalanceData()}, [RenderBalanceData]);
+
+    const tableRows = data.map((row, index) => (
+        <tr key={index}>
+          <td>{row.ticker_label}</td>
+          <td>{row.amount}</td>
+        </tr>
+      ));
 
     return (
     <>
         <Header value={value}/>
         <div className="login-background extend-height vertical-center ">
-            <div class="spinner-border" role="status">
-                <span class="sr-only"></span>
-            </div>
+        <table className="table table-light">
+            <thead>
+                <tr>
+                <th>Ticker Label</th>
+                <th>Balance amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {tableRows}
+            </tbody>
+        </table>
         </div>
         <Footer />
     </>
