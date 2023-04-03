@@ -4,7 +4,11 @@
 
 - [Tradr frontend](https://mbutura.github.io/tradr-ui/)
 
-## Design Link
+## Backend code
+
+- [Tradr backend code](https://github.com/mbutura/tradr-backend)
+
+## Figma design link
 
 [Figma design](https://www.figma.com/file/0HSiGl3dc1WXkCLbLAWgU4/TradR-startup?node-id=10-52)
 
